@@ -6,12 +6,14 @@ public class Conta {
 	private int conta;
 	private int agencia;
 	private Cliente titular;
+	private static int totalContas;
 	
 	public Conta() {
 		
 	}
 	
 	public Conta(int agencia, int conta) {
+		totalContas++;
 		this.agencia = agencia;
 		this.conta = conta;
 		System.out.println("Conta criada com sucesso. ");
@@ -63,6 +65,10 @@ public class Conta {
 	}
 	public Cliente getTitular() {
 		return this.titular;
+	}
+
+	public static int getTotalContas() {
+		return totalContas;
 	}
 	
 	
