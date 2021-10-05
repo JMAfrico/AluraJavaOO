@@ -1,4 +1,4 @@
-package encapsulamento;
+package Construtores;
 
 public class Conta {
 
@@ -7,6 +7,18 @@ public class Conta {
 	private int agencia;
 	private Cliente titular;
 	
+	public Conta() {
+		
+	}
+	
+	public Conta(int agencia, int conta) {
+		this.agencia = agencia;
+		this.conta = conta;
+		System.out.println("Conta criada com sucesso. ");
+		System.out.println("Agência: "+agencia);
+		System.out.println("Conta: "+conta);
+	}
+
 	public double deposita(double valor) {
 		this.saldo += valor;
 		return valor;
@@ -40,23 +52,17 @@ public class Conta {
 		return this.conta;
 	}
 	
+
 	public int getAgencia() {
 		return this.agencia;
 	}
+
 
 	public void setTitular(Cliente titular) {
 		this.titular = titular;
 	}
 	public Cliente getTitular() {
 		return this.titular;
-	}
-
-	public void setConta(int conta) {
-		this.conta = conta;
-	}
-
-	public void setAgencia(int agencia) {
-		this.agencia = agencia;
 	}
 	
 	
