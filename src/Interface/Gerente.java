@@ -1,20 +1,24 @@
 package Interface;
 
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario implements Autenticacao{
 
-	private int senha;
+	private AutenticacaoUtil autenticador;
 	
-
-	public boolean autentica(int senha) {
-		if (this.senha == senha) {
-			return true;
-		} else {
-			return false;
-		}
+	public Gerente() {
+		 this.autenticador = new AutenticacaoUtil();
+		
 	}
 
+	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
+		this.autenticador.setSenha(senha);
+
+	}
+
+	@Override
+	public boolean autentica(int senha) {
+		return autenticador.autentica(senha);
+		
 	}
 
 	public double getBonificacao() {
